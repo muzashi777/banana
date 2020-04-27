@@ -1,0 +1,65 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        text-align: center;
+      }
+      .container1 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 400px;
+        height: 400px;
+        background-color: darkkhaki;
+        /* padding: 20px ; */
+      }
+      .container2 {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 30px;
+        /* border: 1px solid black; */
+      }
+      button {
+        font-size: 40px;
+      }
+      button:hover {
+        background-color: cornflowerblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container1">
+      <h1 style="color: whitesmoke;">COUNTER</h1>
+      <h2 style="font-size: 100px;">0</h2>
+      <div class="container2">
+        <button id="lower">Lower</button>
+        <button id="higher">Higher</button>
+      </div>
+    </div>
+    <script>
+      const text = document.querySelector("h2");
+      const higher = document.getElementById("higher");
+      const lower = document.getElementById("lower");
+      var num = 0;
+
+      higher.addEventListener("click", Higher);
+      lower.addEventListener("click", Lower);
+
+      function Higher() {
+        num += 1;
+        console.log(num);
+        text.textContent = num;
+      }
+
+      function Lower() {
+        num--;
+        console.log(num);
+        text.textContent = num;
+      }
+    </script>
+  </body>
+</html>

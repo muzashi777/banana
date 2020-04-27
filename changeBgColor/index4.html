@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pass-the-message-project</title>
+    <style>
+      body {
+        background-color: grey;
+        display: flex;
+        justify-content: center;
+      }
+      .container1 {
+        margin: 70px auto;
+        /* display: flex; */
+        text-align: center;
+        width: 60%;
+        height: 400px;
+        background-color: honeydew;
+      }
+      .container2 {
+        margin: 110px auto;
+      }
+      #changeWord {
+        color: red;
+        /* border: 1px solid black; */
+        width: 100px;
+        background-color: darksalmon;
+        margin: auto;
+      }
+      #submitBtn {
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container1">
+      <div class="container2">
+        <h1>A Message You Would like to Pass</h1>
+        <input
+          style="width: 500px;"
+          type="text"
+          name=""
+          id="trigger"
+          placeholder="enter message"
+          value=""
+        />
+        <br /><input type="submit" id="submitBtn" value="Click Me" />
+        <div id="addValue"></div>
+
+        <h2>Last Message Delivered</h2>
+        <!-- <p id="addValue"></p> -->
+        <h2 id="output">Hi there!!</h2>
+      </div>
+    </div>
+
+    <script>
+      const handdleChange = document.getElementById("submitBtn");
+      handdleChange.addEventListener("click", outputText);
+      const outText = document.getElementById("output");
+      const valueInput = document.getElementById("trigger");
+
+      function outputText() {
+        const values = valueInput.value;
+        console.log(values);
+        if (values === "") {
+          valueInput.value = "";
+          addValueNode();
+          setTimeout(() => {
+            document.getElementById("changeWord").innerHTML = "";
+            document.getElementById("changeWord").setAttribute("id", "");
+          }, 2000);
+        } else {
+          outText.textContent = values;
+        }
+      }
+
+      function addValueNode() {
+        const add = document.getElementById("addValue");
+        const node = document.createElement("p");
+        node.setAttribute("id", "changeWord");
+        // node.setAttribute("class", "changeWord");
+        add.appendChild(node);
+
+        const fromId = document.getElementById("changeWord");
+        fromId.innerHTML = "Add Message";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <style>
+      div {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: crimson;
+        width: 70%;
+        height: 500px;
+        border: 5px solid slateblue;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <img
+        style="width: 100%; height: 100%;"
+        src="https://s359.kapook.com/rq/580/435/50/pagebuilder/c2cdcadf-7acb-4a93-8781-a9b120dee627.jpg"
+        alt=""
+      />
+    </div>
+    <button
+      style="
+        position: absolute;
+        left: 10%;
+        top: 45%;
+        font-size: 2em;
+        width: 80px;
+      "
+      id="left"
+    >
+      left
+    </button>
+    <button
+      id="right"
+      style="
+        position: absolute;
+        left: 83%;
+        top: 45%;
+        font-size: 2em;
+        width: 80px;
+      "
+    >
+      right
+    </button>
+    <script>
+      const imageUrl = [
+        "https://s359.kapook.com/rq/580/435/50/pagebuilder/c2cdcadf-7acb-4a93-8781-a9b120dee627.jpg",
+        "https://s359.kapook.com/rq/580/435/50/pagebuilder/2ff1b254-7581-45ef-99b4-3614b5ccdafc.jpg",
+        "https://d2pa5gi5n2e1an.cloudfront.net/th/images/car_models/Lotus_Elise/2/main/L_1.jpg",
+        "https://cdn.pixabay.com/photo/2016/12/07/21/50/audi-1890494__340.jpg",
+        "https://d2pa5gi5n2e1an.cloudfront.net/th/images/car_models/LOTUS_Evora/1/main/L_1.jpg",
+        "https://img.khaorot.com/resize/1000x-/2019/12/26/2LRm9VVr/2020-yzf-r1m-700x525-3-9b05.png",
+      ];
+      const left = document.getElementById("left");
+      const right = document.getElementById("right");
+      const img = document.querySelector("img");
+
+      left.addEventListener("click", previous);
+      right.addEventListener("click", next);
+      var i = 0;
+      function next() {
+        i++;
+        if (i > imageUrl.length - 1) {
+          i = imageUrl.length - 5;
+        }
+        img.setAttribute("src", imageUrl[i]);
+        console.log(i);
+      }
+
+      function previous() {
+        i--;
+        if (i < 0) {
+          i = imageUrl.length - 1;
+        }
+        img.setAttribute("src", imageUrl[i]);
+        console.log(i);
+      }
+    </script>
+  </body>
+</html>

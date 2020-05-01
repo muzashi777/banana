@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      div {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      button {
+        width: 100px;
+        height: 50px;
+        border: 2px dashed salmon;
+        font-weight: 800;
+        background-color: skyblue;
+        color: seagreen;
+        align-items: center;
+      }
+    </style>
+    <title>HexColor</title>
+  </head>
+  <body>
+    <div>
+      <h1>HEX COLOR:</h1>
+      <button>CLICK ME</button>
+    </div>
+
+    <script>
+      const handleChange = document.querySelector("button");
+      handleChange.addEventListener("click", changeColor);
+
+      function color() {
+        const colortype = [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f",
+        ];
+
+        var colorText = "";
+        for (let i = 0; i < 6; i++) {
+          indexColor = Math.floor(Math.random() * colortype.length);
+          colorText += colortype[indexColor];
+        }
+        console.log(colorText);
+        return colorText;
+      }
+
+      function changeColor() {
+        const hexColor = "#" + color().toUpperCase();
+        const bg = document.querySelector("body");
+        bg.style.background = hexColor;
+
+        const text = document.querySelector("h1");
+        text.innerHTML = "HEX COLOR: " + hexColor;
+      }
+    </script>
+  </body>
+</html>

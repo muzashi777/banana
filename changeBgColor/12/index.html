@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <!-- <link rel="stylesheet" href="./css/all.css" /> -->
+    <title>Document</title>
+  </head>
+  <body class="bg-dark">
+    <div
+      class="container text-center bg-secondary my-5 py-4"
+      style="height: 500px; border-radius: 50px;"
+    >
+      <h1 class="text-warning">To Do Lists</h1>
+      <form action="" onsubmit="return false" id="form">
+        <input type="text" name="" id="addlist" style="height: 35px;"/>
+        <input
+          type="submit"
+          value="Submit"
+          class="btn btn-success text-danger font-weight-bold"
+        />
+      </form>
+      <div class="item-container">
+        <!-- end of form  -->
+        <div class="item-list my-5">
+          <!-- single item -->
+          <!-- <div class="item my-3">
+  <h5 class="item-name text-capitalize">laundry</h5>
+  <div class="item-icons">
+   <a href="#" class="complete-item mx-2 item-icon"><i class="far fa-check-circle"></i></a>
+   <a href="#" class="edit-item mx-2 item-icon"><i class="far fa-edit"></i></a>
+   <a href="#" class="delete-item item-icon"><i class="far fa-times-circle"></i></a>
+  </div>
+ </div> -->
+          <!-- end of single item -->
+        </div>
+        <button
+          type="button"
+          class="btn btn-green my-3 text-capitalize"
+          id="clear-list"
+        >
+          clear items
+        </button>
+      </div>
+    <script src="./script.js"></script>
+    <script
+      src="https://kit.fontawesome.com/a21a8cfad3.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
